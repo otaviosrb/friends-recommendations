@@ -45,3 +45,42 @@ def ranking(usuario_alvo):
         nome, valor = ranking_lista_ordenado[i]
         print(f'{i+1}º {nome} - {valor:.2f}%')
 
+def ver_interesses(usuario_alvo):
+    print(usuarios[usuario_alvo])
+
+def exibir_usuarios():
+    print('Usuários Disponíveis: ')
+    for nome in usuarios:
+        print(f'- {nome}')
+
+while True:
+    print('''1 - Ver interesses de um usuário
+2 - Ver similaridade entre dois usuários
+3 - Ver melhor recomendação
+4 - Ver ranking
+5 - Adicionar novo usuário
+6 - Adicionar interesse a um usuário
+7 - Sair''')
+    
+    entrada_menu = input('Seleciona uma opção: ')
+
+    if entrada_menu == '1':
+        exibir_usuarios()
+        usuario = input('Digite o nome do usuário: ')
+        ver_interesses(usuario)
+        
+    elif entrada_menu == '2':
+        exibir_usuarios()
+        usuario1 = input('Digite o nome do Usuário 1: ')
+        usuario2 = input('Digite o nome do Usuário 2: ')
+        print(similaridade(usuario1, usuario2))
+
+    elif entrada_menu == '3':
+        exibir_usuarios()
+        usuario = input('Digite o nome do usuário: ')
+        print(melhor_recomendacao(usuario))
+        
+    elif entrada_menu == '4':
+        exibir_usuarios()
+        usuario = input('Digite o nome do usuário: ')
+        ranking(usuario)
