@@ -1,1 +1,1 @@
-intersecao_interesses / uniao_interesses
+melhor_usuario, maior_similaridade
