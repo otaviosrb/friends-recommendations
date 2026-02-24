@@ -84,3 +84,16 @@ while True:
         exibir_usuarios()
         usuario = input('Digite o nome do usuário: ')
         ranking(usuario)
+
+    elif entrada_menu == '5':
+        usuario = input('Digite o nome do usuário para adicionar: ')
+        usuarios[usuario] = set()
+        print(f'{usuario} foi adicionado(a)!')
+    
+    elif entrada_menu == '6':
+        usuario = input('Digite o nome do usuário: ')
+        interesse = input('Digite o interesse: ')
+        usuarios[usuario].add(interesse)
+    
+    elif entrada_menu == '7':
+        break
