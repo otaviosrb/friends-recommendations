@@ -18,6 +18,9 @@ def similaridade(usuario1, usuario2):
     uniao_interesses = interesses_1 | interesses_2
     intersecao_interesses = interesses_1 & interesses_2
 
+    if not uniao_interesses:
+        return 0
+
     return (len(intersecao_interesses) / len(uniao_interesses)) * 100
 
 def melhor_recomendacao(usuario_alvo):
@@ -47,7 +50,10 @@ def ranking(usuario_alvo):
     print()
 
 def ver_interesses(usuario_alvo):
-    print(f'{usuarios[usuario_alvo]}\n')
+    print(f'Interesses de {usuario_alvo}: ')
+    for interesse in usuarios[usuario_alvo]:
+        print(f'- {interesse}')
+    print()
 
 def exibir_usuarios():
     print('Usuários Disponíveis: ')
